@@ -24,5 +24,8 @@ define (require) ->
     setOpacity: (value) ->
       console.log "Pane::setOpacity ->", value
       value = value / 10
-      this.$element.animate({opacity: value})
+
+      # Don't put the animation in the animation queue, or we have to render
+      # every single value change
+      this.$element.animate({opacity: value}, {queue: false})
 
