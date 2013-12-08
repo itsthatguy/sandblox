@@ -26,4 +26,3 @@ define (require) ->
       value = value / 10
       this.$element.animate({opacity: value})
 
-
